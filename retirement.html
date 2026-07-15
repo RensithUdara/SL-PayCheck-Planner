@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+<title>Sri Lanka Retirement Planner 2025/2026 | EPF/ETF Projection & Pension Estimate</title>
+<meta name="description" content="Plan your retirement in Sri Lanka. Private sector EPF/ETF growth projection with CBSL-declared interest, or government sector pension & gratuity estimate. Print or save as PDF.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1877F2">
+<link rel="canonical" href="https://sl-salary-cal.vercel.app/retirement.html">
+<link rel="icon" type="image/png" href="./image.png">
+
+<style>
+  :root {
+    --blue: #1877F2;
+    --blue-dark: #145dbf;
+    --blue-light: #e7f0ff;
+    --green: #2c8a1f;
+    --green-light: #eaf7e6;
+    --gray-text: #65676b;
+    --gray-border: #dfe3ee;
+    --gray-bg: #f0f2f5;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: linear-gradient(180deg, #f7faff 0%, #ffffff 220px);
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1c1e21;
+    margin: 0;
+    padding: clamp(16px, 5vw, 32px) clamp(10px, 4vw, 20px) 48px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .container { max-width: 620px; margin: 0 auto; }
+  svg.icon { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; vertical-align: -0.15em; }
+
+  .backlink {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: clamp(12px, 3vw, 13.5px); font-weight: 700; color: var(--blue);
+    text-decoration: none; margin-bottom: 14px;
+  }
+  .backlink svg { width: 15px; height: 15px; }
+  .backlink:hover { text-decoration: underline; }
+
+  .header { text-align: center; margin-bottom: clamp(16px, 4vw, 22px); }
+  .header-icon {
+    width: 48px; height: 48px; background: var(--blue-light); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;
+    color: var(--blue); font-size: 22px;
+  }
+  h1 { color: #1c1e21; font-size: clamp(18px, 5vw, 23px); font-weight: 800; margin: 0 0 5px; letter-spacing: -0.3px; }
+  h1 span { color: var(--blue); }
+  p.sub { color: var(--gray-text); font-size: clamp(11.5px, 3vw, 13px); margin: 0; }
+
+  .card {
+    background: #ffffff; border: 1px solid var(--gray-border); border-radius: 16px;
+    padding: clamp(16px, 4.5vw, 24px); margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(24,119,242,0.07);
+  }
+  .card-title {
+    display: flex; align-items: center; gap: 8px;
+    font-size: clamp(14.5px, 4vw, 16.5px); font-weight: 700; color: #1c1e21; margin: 0 0 4px;
+  }
+  .card-title .icon-badge {
+    width: 30px; height: 30px; border-radius: 9px; background: var(--blue-light); color: var(--blue);
+    display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
+  }
+  .card-desc { font-size: clamp(11.5px, 3vw, 12.5px); color: var(--gray-text); margin: 0 0 16px; }
+
+  label.field-label {
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 600; font-size: clamp(12.5px, 3.2vw, 13.5px); margin-bottom: 7px; color: #1c1e21;
+  }
+  label.field-label .icon { color: var(--gray-text); font-size: 14px; }
+
+  select, input[type="number"] {
+    width: 100%; padding: clamp(10px, 2.8vw, 13px) 14px;
+    font-size: 16px;
+    border: 1.5px solid #ccd0d5; border-radius: 11px; margin-bottom: 15px;
+    font-family: inherit; background: #fff; color: #1c1e21;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    -webkit-appearance: none; appearance: none;
+  }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2365676b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; padding-right: 38px;
+  }
+  select:focus, input[type="number"]:focus {
+    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,119,242,0.13);
+  }
+  input::placeholder { color: #9aa0a6; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .two-col > div, .three-col > div { display: flex; flex-direction: column; }
+
+  .radio-group { display: flex; gap: 10px; margin-bottom: 15px; }
+  .radio-tile { flex: 1; position: relative; }
+  .radio-tile input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .radio-tile .tile-content {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    background: var(--gray-bg); border: 1.5px solid #ccd0d5; border-radius: 12px;
+    padding: clamp(10px, 3vw, 14px) 8px; text-align: center; font-weight: 600;
+    font-size: clamp(11.5px, 3vw, 13px); color: var(--gray-text); transition: all 0.15s ease;
+  }
+  .radio-tile .tile-content svg { width: clamp(17px, 4.5vw, 20px); height: clamp(17px, 4.5vw, 20px); }
+  .radio-tile input:checked + .tile-content {
+    border-color: var(--blue); background: var(--blue-light); color: var(--blue);
+    box-shadow: 0 2px 8px rgba(24,119,242,0.15);
+  }
+
+  button {
+    width: 100%; background: var(--blue); color: #fff; border: none;
+    padding: clamp(12px, 3.2vw, 15px); font-size: clamp(13.5px, 3.6vw, 15.5px); font-weight: 700;
+    border-radius: 11px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  button:hover { background: var(--blue-dark); }
+  button:active { transform: scale(0.98); }
+  button.secondary { background: #eef4ff; color: var(--blue); }
+  button.secondary:hover { background: #dde9ff; }
+
+  .result-row {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    padding: clamp(8px, 2.2vw, 10px) 0; font-size: clamp(12.5px, 3.4vw, 14px);
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .result-row:last-child { border-bottom: none; }
+  .result-label { display: flex; align-items: center; gap: 8px; color: #444950; }
+  .result-label .icon { color: var(--gray-text); font-size: 15px; }
+  .result-value { font-weight: 700; white-space: nowrap; }
+  .result-row.total {
+    font-weight: 800; font-size: clamp(14px, 3.8vw, 16px); color: var(--blue);
+    padding-top: 14px; border-top: 2px solid var(--blue); margin-top: 8px;
+  }
+  .result-row.total.green { color: var(--green); border-top-color: var(--green); }
+
+  .section-divider {
+    display: flex; align-items: center; gap: 8px;
+    font-size: clamp(12.5px, 3.4vw, 14px); font-weight: 700; color: #1c1e21; margin: 22px 0 6px;
+  }
+  .section-divider .icon { color: var(--blue); }
+
+  .note-box {
+    display: flex; gap: 10px; background: #fff8e6; border: 1px solid #ffe4a3; border-radius: 12px;
+    padding: 12px 14px; margin-top: 14px; font-size: clamp(11px, 2.9vw, 12.5px); color: #6b5610;
+  }
+  .note-box .icon { color: #b8860b; margin-top: 1px; font-size: 16px; }
+
+  .source-box {
+    display: flex; gap: 10px; background: var(--blue-light); border: 1px solid #c7ddff; border-radius: 12px;
+    padding: 12px 14px; margin-top: 14px; font-size: clamp(11px, 2.9vw, 12.5px); color: #14428f;
+  }
+  .source-box .icon { color: var(--blue); margin-top: 1px; font-size: 16px; }
+
+  .hidden { display: none !important; }
+  .footer-note { text-align: center; font-size: clamp(10.5px, 2.6vw, 11.5px); color: #9aa0a6; margin-top: 22px; }
+
+  .growth-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--gray-border); margin-top: 6px; }
+  table.rp-table { width: 100%; border-collapse: collapse; font-size: clamp(11px, 2.9vw, 12.5px); min-width: 500px; }
+  table.rp-table th {
+    background: var(--blue-light); color: var(--blue); font-weight: 700;
+    padding: 9px 10px; text-align: left; white-space: nowrap;
+  }
+  table.rp-table td { padding: 9px 10px; border-top: 1px solid #f0f2f5; white-space: nowrap; }
+  table.rp-table tr:nth-child(even) td { background: #fafbfe; }
+  table.rp-table tr.highlight td { background: var(--green-light); font-weight: 700; }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 6px; }
+  .stat-box {
+    background: var(--gray-bg); border-radius: 12px; padding: 14px; text-align: center;
+  }
+  .stat-box .stat-num { font-size: clamp(16px, 4.5vw, 20px); font-weight: 800; color: var(--blue); }
+  .stat-box.green .stat-num { color: var(--green); }
+  .stat-box .stat-lbl { font-size: 11px; color: var(--gray-text); font-weight: 600; margin-top: 3px; }
+  @media (max-width: 380px) {
+    .two-col, .three-col, .stat-grid { grid-template-columns: 1fr; }
+  }
+
+  .report-header { display: none; }
+
+  @media print {
+    body { background: #fff !important; padding: 0; }
+    .backlink, .radio-group, #plannerForm, .no-print, button { display: none !important; }
+    .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+    .report-header { display: block; text-align: center; margin-bottom: 18px; }
+    .report-header h2 { margin: 0 0 4px; font-size: 18px; }
+    .report-header p { margin: 0; font-size: 11px; color: #555; }
+    .container { max-width: 100%; }
+  }
+
+  /* Custom EPF rate (new) */
+  .rate-toggle-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; margin-bottom: 12px;
+  }
+  .rate-toggle-row .rt-label {
+    display: flex; align-items: center; gap: 6px;
+    font-weight: 600; font-size: clamp(12.5px, 3.2vw, 13.5px); color: #1c1e21;
+  }
+  .switch { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .switch .slider {
+    position: absolute; cursor: pointer; inset: 0; background-color: #ccd0d5;
+    transition: .15s; border-radius: 24px;
+  }
+  .switch .slider:before {
+    position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px;
+    background-color: #fff; transition: .15s; border-radius: 50%;
+  }
+  .switch input:checked + .slider { background-color: var(--blue); }
+  .switch input:checked + .slider:before { transform: translateX(18px); }
+  .epf-rate-box {
+    background: var(--blue-light); border: 1px solid #c7ddff; border-radius: 12px;
+    padding: 14px; margin-bottom: 15px;
+  }
+  .epf-rate-box .two-col { margin-bottom: 0; }
+  .epf-rate-box input[type="number"] { margin-bottom: 0; }
+  .epf-rate-box .rate-hint {
+    font-size: clamp(10.5px, 2.7vw, 11.5px); color: #14428f; margin-top: 8px; margin-bottom: 0;
+  }
+</style>
+<link rel="stylesheet" href="./futuristic-ui.css">
+</head>
+<body>
+
+<div class="container">
+
+  <a class="backlink" href="manager.html">
+    <svg class="icon" viewBox="0 0 24 24"><line x1="19" x2="5" y1="12" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to More Tools
+  </a>
+
+  <div class="header">
+    <div class="header-icon">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="m6.4 6.4 2.8 2.8"/><path d="M2 12h4"/><path d="m6.4 17.6 2.8-2.8"/><circle cx="12" cy="12" r="4"/><path d="M12 18v4"/></svg>
+    </div>
+    <h1>Retirement <span>Planner</span></h1>
+    <p class="sub">EPF/ETF Projection · Government Pension Estimate · Y/A 2025/2026 Rates</p>
+  </div>
+
+  <div class="report-header">
+    <h2>Sri Lanka Retirement Plan Report</h2>
+    <p id="reportDate"></p>
+  </div>
+
+  <div id="plannerForm">
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg></span>
+        Your Details
+      </div>
+      <p class="card-desc">Fill this in to project your retirement outcome the way EPF/ETF (private) or the pension scheme (government) actually works in Sri Lanka.</p>
+
+      <label class="field-label"><svg class="icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Sector</label>
+      <div class="radio-group">
+        <label class="radio-tile">
+          <input type="radio" name="rpSector" value="private" checked onchange="toggleSector()">
+          <div class="tile-content"><svg class="icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Private Sector</div>
+        </label>
+        <label class="radio-tile">
+          <input type="radio" name="rpSector" value="government" onchange="toggleSector()">
+          <div class="tile-content"><svg class="icon" viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Government</div>
+        </label>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <label class="field-label"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>Current Age</label>
+          <input type="number" id="curAge" placeholder="e.g. 30" min="16" max="65" value="30">
+        </div>
+        <div>
+          <label class="field-label"><svg class="icon" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/></svg>Retirement Age</label>
+          <input type="number" id="retAge" placeholder="e.g. 55" min="45" max="65" value="55">
+        </div>
+      </div>
+
+      <label class="field-label" id="salLbl"><svg class="icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/></svg>Current Monthly Salary (LKR)</label>
+      <input type="number" id="curSalary" placeholder="e.g. 150000" min="0">
+
+      <label class="field-label"><svg class="icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Expected Annual Salary Increment (%)</label>
+      <input type="number" id="increment" placeholder="e.g. 8" min="0" step="0.5" value="8">
+
+      <div id="privateOnlyFields">
+        <div id="rpEpfRateWrap">
+          <div class="rate-toggle-row">
+            <span class="rt-label"><svg class="icon" viewBox="0 0 24 24"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-1.5h3V20h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2Z"/></svg>My employer uses a different EPF %</span>
+            <label class="switch">
+              <input type="checkbox" id="rpCustomEpfToggle" onchange="toggleRpCustomEpf()">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="epf-rate-box hidden" id="rpEpfRateBox">
+            <div class="two-col">
+              <div>
+                <label class="field-label" style="margin-bottom:6px;">Employee EPF %</label>
+                <input type="number" id="rpEpfEmpPct" placeholder="8" min="0" max="100" step="0.1" value="8">
+              </div>
+              <div>
+                <label class="field-label" style="margin-bottom:6px;">Employer EPF %</label>
+                <input type="number" id="rpEpfErPct" placeholder="12" min="0" max="100" step="0.1" value="12">
+              </div>
+            </div>
+            <p class="rate-hint">Statutory minimum is 8% + 12% = 20%. Some employers elect higher rates (Section 11 of the EPF Act) or run an Approved Private Provident Fund with different rates (e.g. 10%/15%) — enter your actual rates here if they differ.</p>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <label class="field-label">Current EPF Balance (LKR)</label>
+            <input type="number" id="curEpfBal" placeholder="0 if unsure" min="0" value="0">
+          </div>
+          <div>
+            <label class="field-label">Current ETF Balance (LKR)</label>
+            <input type="number" id="curEtfBal" placeholder="0 if unsure" min="0" value="0">
+          </div>
+        </div>
+        <label class="field-label"><svg class="icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg>Assumed Annual EPF/ETF Interest Rate (%)</label>
+        <input type="number" id="interestRate" placeholder="e.g. 10.75" min="0" step="0.05" value="10.75">
+        <div class="note-box" style="margin-top:-9px; margin-bottom:15px;">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <span>Default 10.75% is the CBSL-declared EPF rate for member balances at end of 2025. This is announced annually and not guaranteed for future years — adjust to model conservative or optimistic scenarios.</span>
+        </div>
+      </div>
+
+      <div id="govOnlyFields" class="hidden">
+        <label class="field-label"><svg class="icon" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/></svg>Years of Service Completed So Far</label>
+        <input type="number" id="yearsServiceSoFar" placeholder="e.g. 5" min="0" max="45" value="5">
+      </div>
+
+      <button onclick="calculateRetirement()">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v4"/><circle cx="12" cy="12" r="4"/><path d="M12 18v4"/></svg>
+        Generate My Retirement Plan
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== PRIVATE SECTOR RESULT ===== -->
+  <div class="card hidden" id="privateResultCard">
+    <div class="card-title">
+      <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-1.5h3V20h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2Z"/></svg></span>
+      EPF &amp; ETF Retirement Projection
+    </div>
+    <p class="card-desc" id="privSummaryLine">-</p>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-num" id="pEpfFinal">-</div>
+        <div class="stat-lbl">EPF Balance at Retirement</div>
+      </div>
+      <div class="stat-box green">
+        <div class="stat-num" id="pEtfFinal">-</div>
+        <div class="stat-lbl">ETF Balance at Retirement</div>
+      </div>
+    </div>
+    <div class="result-row total green">
+      <span class="result-label"><svg class="icon" viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.79"/></svg>Grand Total Retirement Fund</span>
+      <span class="result-value" id="pGrandTotal">-</span>
+    </div>
+
+    <div class="section-divider">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      Year-by-Year Growth
+    </div>
+    <div class="growth-table-wrap">
+      <table class="rp-table">
+        <thead><tr><th>Year</th><th>Age</th><th>Monthly Salary</th><th>EPF Balance</th><th>ETF Balance</th></tr></thead>
+        <tbody id="pTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="section-divider">
+      <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+      Gratuity Estimate (Payment of Gratuity Act No. 12 of 1983)
+    </div>
+    <div class="result-row">
+      <span class="result-label">Half a month's salary × years of service</span>
+      <span class="result-value" id="pGratuity">-</span>
+    </div>
+    <div class="note-box">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <span>Only payable if you complete 5+ continuous years of service with the same employer. Calculated here as 0.5 × final monthly salary × total years of service, per the statutory formula. This is separate from, and in addition to, your EPF/ETF.</span>
+    </div>
+  </div>
+
+  <!-- ===== GOVERNMENT SECTOR RESULT ===== -->
+  <div class="card hidden" id="govResultCard">
+    <div class="card-title">
+      <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 20 7 4 7"/></svg></span>
+      Government Pension Estimate
+    </div>
+    <p class="card-desc" id="govSummaryLine">-</p>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-num" id="gYearsService">-</div>
+        <div class="stat-lbl">Total Years of Service at Retirement</div>
+      </div>
+      <div class="stat-box green">
+        <div class="stat-num" id="gFinalSalary">-</div>
+        <div class="stat-lbl">Projected Final Monthly Salary</div>
+      </div>
+    </div>
+
+    <div class="result-row total green">
+      <span class="result-label"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Estimated Monthly Pension</span>
+      <span class="result-value" id="gPension">-</span>
+    </div>
+    <div class="result-row">
+      <span class="result-label">Estimated as % of Final Salary</span>
+      <span class="result-value" id="gPensionPct">-</span>
+    </div>
+
+    <div class="note-box">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <span><b>Illustrative estimate only.</b> The Public Servants' Pension Scheme (PSPS) is a non-contributory, defined-benefit scheme where the monthly pension scales with years of service, reaching roughly 85–90% of last drawn salary after 30 years — this tool applies that published range on a straight-line basis for years below 30. It does not replicate the exact statutory formula, which is set out in Pension Minutes and circulars issued by the Department of Pensions and depends on your specific service category (civil, teaching, police, armed forces, etc). Confirm your exact figure with your HR/establishments division or the Department of Pensions.</span>
+    </div>
+
+    <div class="section-divider">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Also Applicable to You
+    </div>
+    <ul style="margin:0; padding-left:18px; font-size: clamp(12px,3.2vw,13.5px); color:#333;">
+      <li style="margin-bottom:8px;"><b>Widows'/Widowers' &amp; Orphans' Pension (W&amp;OP)</b> — a separate contributory deduction from your salary throughout service, securing a survivor pension for your dependents. The rate depends on your salary grade/circular, so it isn't included in the figure above.</li>
+      <li style="margin-bottom:8px;"><b>Retiring gratuity</b> — public officers typically receive a lump sum at retirement calculated under pension commutation rules (part of your pension exchanged for cash), a different mechanism from the private-sector Gratuity Act formula, so no figure is estimated here.</li>
+      <li><b>EPF/ETF do not apply</b> to permanent pensionable public officers.</li>
+    </ul>
+  </div>
+
+  <div class="card hidden" id="printCard">
+    <button onclick="window.print()">
+      <svg class="icon" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="source-box">
+    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+    <span>Sources: EPF Act No. 15 of 1958 &amp; ETF Act No. 46 of 1980 (contribution rates); Central Bank of Sri Lanka / EPF Fund Management report (10.75% rate declared on balances at end of 2025); Payment of Gratuity Act No. 12 of 1983; Department of Pensions Sri Lanka &amp; published research on the Public Servants' Pension Scheme (85–90% of last salary after 30 years). This tool gives planning estimates, not a certified benefits statement — always confirm exact figures with the CBSL EPF Department, your employer, or the Department of Pensions before making financial decisions.</span>
+  </div>
+
+  <p class="footer-note">Retirement planner for the Sri Lanka Salary Calculator. Figures based on Y/A 2025/2026 statutory rates and the most recently declared EPF interest rate.</p>
+</div>
+
+<script>
+function toggleSector() {
+  const isPrivate = document.querySelector('input[name="rpSector"]:checked').value === 'private';
+  document.getElementById('privateOnlyFields').classList.toggle('hidden', !isPrivate);
+  document.getElementById('govOnlyFields').classList.toggle('hidden', isPrivate);
+  document.getElementById('salLbl').innerHTML = isPrivate
+    ? '<svg class="icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/></svg>Current Monthly Salary Used for EPF/ETF (LKR)'
+    : '<svg class="icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/></svg>Current Monthly Salary (LKR)';
+}
+
+/* ---------- CUSTOM EPF RATE (new) ---------- */
+function toggleRpCustomEpf() {
+  const on = document.getElementById('rpCustomEpfToggle').checked;
+  document.getElementById('rpEpfRateBox').classList.toggle('hidden', !on);
+  if (!on) {
+    document.getElementById('rpEpfEmpPct').value = 8;
+    document.getElementById('rpEpfErPct').value = 12;
+  }
+}
+function getRpEpfRates() {
+  let emp = parseFloat(document.getElementById('rpEpfEmpPct').value);
+  let er = parseFloat(document.getElementById('rpEpfErPct').value);
+  if (isNaN(emp) || emp < 0) emp = 8;
+  if (isNaN(er) || er < 0) er = 12;
+  return { emp, er };
+}
+
+function fmt(n) {
+  return 'Rs. ' + Math.round(n).toLocaleString('en-LK');
+}
+
+function calculateRetirement() {
+  const isPrivate = document.querySelector('input[name="rpSector"]:checked').value === 'private';
+  const curAge = parseInt(document.getElementById('curAge').value);
+  const retAge = parseInt(document.getElementById('retAge').value);
+  const curSalary = parseFloat(document.getElementById('curSalary').value);
+  const increment = parseFloat(document.getElementById('increment').value) || 0;
+
+  if (isNaN(curAge) || isNaN(retAge) || retAge <= curAge) { alert('Please enter a valid current age and a retirement age greater than your current age.'); return; }
+  if (isNaN(curSalary) || curSalary <= 0) { alert('Please enter a valid monthly salary.'); return; }
+
+  const yearsToGo = retAge - curAge;
+  document.getElementById('reportDate').innerText = 'Generated ' + new Date().toLocaleDateString('en-LK', { year: 'numeric', month: 'long', day: 'numeric' }) + ' — for planning purposes only';
+
+  document.getElementById('privateResultCard').classList.add('hidden');
+  document.getElementById('govResultCard').classList.add('hidden');
+
+  if (isPrivate) {
+    let epfBal = parseFloat(document.getElementById('curEpfBal').value) || 0;
+    let etfBal = parseFloat(document.getElementById('curEtfBal').value) || 0;
+    const rate = (parseFloat(document.getElementById('interestRate').value) || 0) / 100;
+    const { emp: epfEmpPct, er: epfErPct } = getRpEpfRates();
+    const epfCombinedPct = (epfEmpPct + epfErPct) / 100;
+
+    let salary = curSalary;
+    let rows = '';
+    for (let y = 1; y <= yearsToGo; y++) {
+      const annualEpfContribution = salary * epfCombinedPct * 12; // employee % + employer %
+      const annualEtfContribution = salary * 0.03 * 12;
+
+      // Half-year crediting convention: interest applied on opening balance
+      // plus half of the year's contribution (standard EPF projection approximation).
+      epfBal = epfBal * (1 + rate) + annualEpfContribution * (1 + rate / 2);
+      etfBal = etfBal * (1 + rate) + annualEtfContribution * (1 + rate / 2);
+
+      rows += `<tr class="${y === yearsToGo ? 'highlight' : ''}">
+        <td>Year ${y}</td>
+        <td>${curAge + y}</td>
+        <td>${fmt(salary)}</td>
+        <td>${fmt(epfBal)}</td>
+        <td>${fmt(etfBal)}</td>
+      </tr>`;
+
+      salary = salary * (1 + increment / 100);
+    }
+
+    const finalSalary = salary / (1 + increment / 100); // last year's salary used
+    const totalYearsService = yearsToGo; // approximation: service = projection period
+    const gratuity = totalYearsService >= 5 ? 0.5 * finalSalary * totalYearsService : 0;
+
+    document.getElementById('privSummaryLine').innerText =
+      `Projected from age ${curAge} to ${retAge} (${yearsToGo} years), starting at ${fmt(curSalary)}/month with ${increment}% annual increments, ${epfEmpPct}%+${epfErPct}% EPF contribution and ${(rate*100).toFixed(2)}% assumed EPF/ETF interest.`;
+    document.getElementById('pEpfFinal').innerText = fmt(epfBal);
+    document.getElementById('pEtfFinal').innerText = fmt(etfBal);
+    document.getElementById('pGrandTotal').innerText = fmt(epfBal + etfBal);
+    document.getElementById('pTableBody').innerHTML = rows;
+    document.getElementById('pGratuity').innerText = totalYearsService >= 5 ? fmt(gratuity) : 'Not eligible (under 5 years)';
+    document.getElementById('privateResultCard').classList.remove('hidden');
+    document.getElementById('privateResultCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  } else {
+    const yearsSoFar = parseFloat(document.getElementById('yearsServiceSoFar').value) || 0;
+    const totalYearsService = yearsSoFar + yearsToGo;
+
+    let finalSalary = curSalary;
+    for (let y = 1; y <= yearsToGo; y++) {
+      finalSalary = finalSalary * (1 + increment / 100);
+    }
+
+    // Illustrative straight-line approximation of "85-90% after 30 years"
+    const pensionPct = Math.min(87.5, (totalYearsService / 30) * 87.5);
+    const pension = finalSalary * (pensionPct / 100);
+
+    document.getElementById('govSummaryLine').innerText =
+      `Projected from age ${curAge} to ${retAge}, with ${yearsSoFar} years of service already completed and ${increment}% annual salary increments assumed.`;
+    document.getElementById('gYearsService').innerText = totalYearsService + ' yrs';
+    document.getElementById('gFinalSalary').innerText = fmt(finalSalary);
+    document.getElementById('gPension').innerText = fmt(pension);
+    document.getElementById('gPensionPct').innerText = pensionPct.toFixed(1) + '% of final salary';
+    document.getElementById('govResultCard').classList.remove('hidden');
+    document.getElementById('govResultCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  document.getElementById('printCard').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
