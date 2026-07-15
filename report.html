@@ -120,6 +120,7 @@
 
   .footer-note { text-align: center; font-size: clamp(10.5px, 2.6vw, 11.5px); color: #9aa0a6; margin-top: 22px; }
 </style>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('sl_salary_cal_theme') || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark'));</script>
 <link rel="stylesheet" href="./futuristic-ui.css">
 </head>
 <body>
@@ -256,5 +257,6 @@
   <p class="footer-note">Reference page for the Sri Lanka Salary Calculator. Rates shown are for Year of Assessment 2025/2026 (1 April 2025 – 31 March 2026).</p>
 </div>
 
+<script src="./theme.js" defer></script>
 </body>
 </html>
