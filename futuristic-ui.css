@@ -419,6 +419,15 @@ table.rp-table tr.highlight td {
   color: var(--ink);
 }
 
+.role-level-row {
+  gap: 16px;
+}
+
+.role-level-row .lvl-name {
+  max-width: 62%;
+  text-align: right;
+}
+
 .badge,
 .pill,
 .winner-badge {
