@@ -2,7 +2,7 @@
 
 A clean, fast, and mobile-friendly salary toolkit for Sri Lanka 🇱🇰. This project helps users calculate **EPF, ETF, APIT (PAYE) tax, net take-home pay, salary growth, job-role benchmarks, retirement projections, and extra salary tools** in one simple interface.
 
-🌐 Live demo: https://sl-salary-cal.vercel.app/
+🌐 Live demo: https://sl-pay-check-planner.vercel.app/
 
 ---
 

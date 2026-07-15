@@ -1,262 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-<title>Sri Lanka 2025/2026 Official Rates | EPF, ETF, APIT (PAYE) & Government Pension</title>
-<meta name="description" content="Complete, sourced reference of Sri Lanka's 2025/2026 EPF, ETF, APIT (PAYE) tax bands, and government sector pension rules — for both private and government sector employees.">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#1877F2">
-<link rel="canonical" href="https://sl-salary-cal.vercel.app/rates.html">
-<link rel="icon" type="image/png" href="./image.png">
+  <title>Sri Lanka 2025/2026 Official Rates | EPF, ETF, APIT (PAYE) & Government Pension</title>
+  <meta name="description"
+    content="Complete, sourced reference of Sri Lanka's 2025/2026 EPF, ETF, APIT (PAYE) tax bands, and government sector pension rules — for both private and government sector employees.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1877F2">
+  <link rel="canonical" href="https://sl-pay-check-planner.vercel.app/rates.html">
+  <link rel="icon" type="image/png" href="./image.png">
 
-<style>
-  :root {
-    --blue: #1877F2;
-    --blue-dark: #145dbf;
-    --blue-light: #e7f0ff;
-    --green: #2c8a1f;
-    --green-light: #eaf7e6;
-    --gray-text: #65676b;
-    --gray-border: #dfe3ee;
-    --gray-bg: #f0f2f5;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    background: linear-gradient(180deg, #f7faff 0%, #ffffff 220px);
-    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    color: #1c1e21;
-    margin: 0;
-    padding: clamp(16px, 5vw, 32px) clamp(10px, 4vw, 20px) 48px;
-    font-size: 15px;
-    line-height: 1.45;
-  }
-  .container { max-width: 640px; margin: 0 auto; }
-  svg.icon { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; vertical-align: -0.15em; }
+  <style>
+    :root {
+      --blue: #1877F2;
+      --blue-dark: #145dbf;
+      --blue-light: #e7f0ff;
+      --green: #2c8a1f;
+      --green-light: #eaf7e6;
+      --gray-text: #65676b;
+      --gray-border: #dfe3ee;
+      --gray-bg: #f0f2f5;
+    }
 
-  .back-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13px; font-weight: 700; color: var(--blue); text-decoration: none;
-    margin-bottom: 14px;
-  }
-  .back-link svg { width: 15px; height: 15px; }
+    * {
+      box-sizing: border-box;
+    }
 
-  .header { text-align: center; margin-bottom: clamp(16px, 4vw, 22px); }
-  .header-icon {
-    width: 48px; height: 48px; background: var(--blue-light); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;
-    color: var(--blue); font-size: 22px;
-  }
-  h1 { color: #1c1e21; font-size: clamp(18px, 5vw, 23px); font-weight: 800; margin: 0 0 5px; letter-spacing: -0.3px; }
-  h1 span { color: var(--blue); }
-  p.sub { color: var(--gray-text); font-size: clamp(11.5px, 3vw, 13px); margin: 0; }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
 
-  .card {
-    background: #ffffff; border: 1px solid var(--gray-border); border-radius: 16px;
-    padding: clamp(16px, 4.5vw, 24px); margin-bottom: 16px;
-    box-shadow: 0 4px 16px rgba(24,119,242,0.07);
-  }
-  .card-title {
-    display: flex; align-items: center; gap: 8px;
-    font-size: clamp(14.5px, 4vw, 16.5px); font-weight: 700; color: #1c1e21; margin: 0 0 4px;
-  }
-  .card-title .icon-badge {
-    width: 30px; height: 30px; border-radius: 9px; background: var(--blue-light); color: var(--blue);
-    display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
-  }
-  .card-desc { font-size: clamp(11.5px, 3vw, 12.5px); color: var(--gray-text); margin: 0 0 16px; }
+    body {
+      background: linear-gradient(180deg, #f7faff 0%, #ffffff 220px);
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: #1c1e21;
+      margin: 0;
+      padding: clamp(16px, 5vw, 32px) clamp(10px, 4vw, 20px) 48px;
+      font-size: 15px;
+      line-height: 1.45;
+    }
 
-  .growth-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--gray-border); margin-bottom: 8px; }
-  table.rate-table { width: 100%; border-collapse: collapse; font-size: clamp(11.5px, 3vw, 13px); min-width: 460px; }
-  table.rate-table th {
-    background: var(--blue-light); color: var(--blue); font-weight: 700;
-    padding: 10px 12px; text-align: left; white-space: nowrap;
-  }
-  table.rate-table td { padding: 10px 12px; border-top: 1px solid #f0f2f5; }
-  table.rate-table tr:nth-child(even) td { background: #fafbfe; }
-  table.rate-table tr.highlight td { background: var(--green-light); font-weight: 700; }
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
 
-  .stat-row {
-    display: flex; justify-content: space-between; align-items: center; gap: 10px;
-    padding: clamp(8px, 2.2vw, 10px) 0; font-size: clamp(12.5px, 3.4vw, 14px);
-    border-bottom: 1px solid #f0f2f5;
-  }
-  .stat-row:last-child { border-bottom: none; }
-  .stat-label { display: flex; align-items: center; gap: 8px; color: #444950; }
-  .stat-label .icon { color: var(--gray-text); font-size: 15px; }
-  .stat-value { font-weight: 700; white-space: nowrap; color: var(--blue); }
+    svg.icon {
+      width: 1em;
+      height: 1em;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      vertical-align: -0.15em;
+    }
 
-  .pill-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
-  .pill {
-    font-size: 11.5px; font-weight: 700; padding: 5px 11px; border-radius: 20px;
-    background: var(--blue-light); color: var(--blue);
-  }
-  .pill.green { background: var(--green-light); color: var(--green); }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
 
-  .note-box {
-    display: flex; gap: 10px; background: #fff8e6; border: 1px solid #ffe4a3; border-radius: 12px;
-    padding: 12px 14px; margin-top: 14px; font-size: clamp(11px, 2.9vw, 12.5px); color: #6b5610;
-  }
-  .note-box .icon { color: #b8860b; margin-top: 1px; font-size: 16px; }
+    .back-link svg {
+      width: 15px;
+      height: 15px;
+    }
 
-  .source-box {
-    display: flex; gap: 10px; background: var(--blue-light); border: 1px solid #c7ddff; border-radius: 12px;
-    padding: 12px 14px; margin-top: 14px; font-size: clamp(11px, 2.9vw, 12.5px); color: #14428f;
-  }
-  .source-box .icon { color: var(--blue); margin-top: 1px; font-size: 16px; }
-  .source-box a { color: var(--blue-dark); font-weight: 700; }
+    .header {
+      text-align: center;
+      margin-bottom: clamp(16px, 4vw, 22px);
+    }
 
-  .section-divider {
-    display: flex; align-items: center; gap: 8px;
-    font-size: clamp(12.5px, 3.4vw, 14px); font-weight: 700; color: #1c1e21; margin: 22px 0 6px;
-  }
-  .section-divider .icon { color: var(--blue); }
+    .header-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      color: var(--blue);
+      font-size: 22px;
+    }
 
-  ul.plain-list { margin: 0; padding-left: 18px; font-size: clamp(12.5px, 3.2vw, 13.5px); color: #333; }
-  ul.plain-list li { margin-bottom: 8px; }
-  ul.plain-list b { color: #1c1e21; }
+    h1 {
+      color: #1c1e21;
+      font-size: clamp(18px, 5vw, 23px);
+      font-weight: 800;
+      margin: 0 0 5px;
+      letter-spacing: -0.3px;
+    }
 
-  .footer-note { text-align: center; font-size: clamp(10.5px, 2.6vw, 11.5px); color: #9aa0a6; margin-top: 22px; }
-</style>
-<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('sl_salary_cal_theme') || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark'));</script>
-<link rel="stylesheet" href="./futuristic-ui.css">
+    h1 span {
+      color: var(--blue);
+    }
+
+    p.sub {
+      color: var(--gray-text);
+      font-size: clamp(11.5px, 3vw, 13px);
+      margin: 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--gray-border);
+      border-radius: 16px;
+      padding: clamp(16px, 4.5vw, 24px);
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(24, 119, 242, 0.07);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: clamp(14.5px, 4vw, 16.5px);
+      font-weight: 700;
+      color: #1c1e21;
+      margin: 0 0 4px;
+    }
+
+    .card-title .icon-badge {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .card-desc {
+      font-size: clamp(11.5px, 3vw, 12.5px);
+      color: var(--gray-text);
+      margin: 0 0 16px;
+    }
+
+    .growth-table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--gray-border);
+      margin-bottom: 8px;
+    }
+
+    table.rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(11.5px, 3vw, 13px);
+      min-width: 460px;
+    }
+
+    table.rate-table th {
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 700;
+      padding: 10px 12px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    table.rate-table td {
+      padding: 10px 12px;
+      border-top: 1px solid #f0f2f5;
+    }
+
+    table.rate-table tr:nth-child(even) td {
+      background: #fafbfe;
+    }
+
+    table.rate-table tr.highlight td {
+      background: var(--green-light);
+      font-weight: 700;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: clamp(8px, 2.2vw, 10px) 0;
+      font-size: clamp(12.5px, 3.4vw, 14px);
+      border-bottom: 1px solid #f0f2f5;
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .stat-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #444950;
+    }
+
+    .stat-label .icon {
+      color: var(--gray-text);
+      font-size: 15px;
+    }
+
+    .stat-value {
+      font-weight: 700;
+      white-space: nowrap;
+      color: var(--blue);
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .pill {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 20px;
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    .pill.green {
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .note-box {
+      display: flex;
+      gap: 10px;
+      background: #fff8e6;
+      border: 1px solid #ffe4a3;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      font-size: clamp(11px, 2.9vw, 12.5px);
+      color: #6b5610;
+    }
+
+    .note-box .icon {
+      color: #b8860b;
+      margin-top: 1px;
+      font-size: 16px;
+    }
+
+    .source-box {
+      display: flex;
+      gap: 10px;
+      background: var(--blue-light);
+      border: 1px solid #c7ddff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      font-size: clamp(11px, 2.9vw, 12.5px);
+      color: #14428f;
+    }
+
+    .source-box .icon {
+      color: var(--blue);
+      margin-top: 1px;
+      font-size: 16px;
+    }
+
+    .source-box a {
+      color: var(--blue-dark);
+      font-weight: 700;
+    }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: clamp(12.5px, 3.4vw, 14px);
+      font-weight: 700;
+      color: #1c1e21;
+      margin: 22px 0 6px;
+    }
+
+    .section-divider .icon {
+      color: var(--blue);
+    }
+
+    ul.plain-list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: clamp(12.5px, 3.2vw, 13.5px);
+      color: #333;
+    }
+
+    ul.plain-list li {
+      margin-bottom: 8px;
+    }
+
+    ul.plain-list b {
+      color: #1c1e21;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: clamp(10.5px, 2.6vw, 11.5px);
+      color: #9aa0a6;
+      margin-top: 22px;
+    }
+  </style>
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('sl_salary_cal_theme') || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark'));</script>
+  <link rel="stylesheet" href="./futuristic-ui.css">
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <a class="back-link" href="index.html">
-    <svg class="icon" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-    Back to Calculator
-  </a>
+    <a class="back-link" href="index.html">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="m12 19-7-7 7-7" />
+        <path d="M19 12H5" />
+      </svg>
+      Back to Calculator
+    </a>
 
-  <div class="header">
-    <div class="header-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
-    <h1>Sri Lanka <span>Official Rates</span> 2025/2026</h1>
-    <p class="sub">EPF · ETF · APIT (PAYE) · Government Pension — Year of Assessment 2025/2026 (1 Apr 2025 – 31 Mar 2026)</p>
+    <div class="header">
+      <div class="header-icon"><svg class="icon" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+          <path d="M14 2v6h6" />
+          <path d="M16 13H8" />
+          <path d="M16 17H8" />
+          <path d="M10 9H8" />
+        </svg></div>
+      <h1>Sri Lanka <span>Official Rates</span> 2025/2026</h1>
+      <p class="sub">EPF · ETF · APIT (PAYE) · Government Pension — Year of Assessment 2025/2026 (1 Apr 2025 – 31 Mar
+        2026)</p>
+    </div>
+
+    <!-- APIT / PAYE -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1Z" />
+            <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+          </svg></span>
+        Income Tax — APIT (PAYE), Table 01
+      </div>
+      <p class="card-desc">Applies to regular monthly employment income for resident employees (private &amp;
+        government). Withheld monthly by the employer and remitted to the IRD.</p>
+
+      <div class="pill-row">
+        <span class="pill">Effective from 1 Apr 2025</span>
+        <span class="pill green">Relief: Rs. 1,800,000/yr</span>
+        <span class="pill green">Rs. 150,000/month</span>
+      </div>
+
+      <div class="growth-table-wrap">
+        <table class="rate-table">
+          <thead>
+            <tr>
+              <th>Monthly taxable slab (after relief)</th>
+              <th>Annual equivalent</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First Rs. 83,333.33</td>
+              <td>First Rs. 1,000,000</td>
+              <td>6%</td>
+            </tr>
+            <tr>
+              <td>Next Rs. 41,666.67</td>
+              <td>Next Rs. 500,000</td>
+              <td>18%</td>
+            </tr>
+            <tr>
+              <td>Next Rs. 41,666.67</td>
+              <td>Next Rs. 500,000</td>
+              <td>24%</td>
+            </tr>
+            <tr>
+              <td>Next Rs. 41,666.67</td>
+              <td>Next Rs. 500,000</td>
+              <td>30%</td>
+            </tr>
+            <tr class="highlight">
+              <td>Balance</td>
+              <td>Balance above Rs. 2,500,000</td>
+              <td>36%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <svg class="icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <span>Personal relief was raised from Rs. 1,200,000 to Rs. 1,800,000/year and the old 12% band was removed,
+          under the Inland Revenue (Amendment) Act No. 2 of 2025, effective 1 April 2025. This table applies to both
+          government and private sector employees — APIT does not distinguish by sector.</span>
+      </div>
+    </div>
+
+    <!-- EPF / ETF -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-1.5h3V20h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2Z" />
+          </svg></span>
+        EPF &amp; ETF — Private Sector Only
+      </div>
+      <p class="card-desc">Statutory retirement contributions. Calculated on total monthly earnings (basic + allowances
+        that are part of regular pay, per employer's contract terms).</p>
+
+      <div class="stat-row">
+        <span class="stat-label"><svg class="icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="5" />
+            <path d="M20 21a8 8 0 0 0-16 0" />
+          </svg>EPF — Employee contribution</span>
+        <span class="stat-value">8%</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+          </svg>EPF — Employer contribution</span>
+        <span class="stat-value">12%</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label"><svg class="icon" viewBox="0 0 24 24">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+            <polyline points="16 7 22 7 22 13" />
+          </svg>EPF — Total contribution</span>
+        <span class="stat-value">20%</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M20 7h-9" />
+            <path d="M14 17H5" />
+            <circle cx="17" cy="17" r="3" />
+            <circle cx="7" cy="7" r="3" />
+          </svg>ETF — Employer contribution</span>
+        <span class="stat-value">3%</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2v4" />
+            <path d="m16.24 7.76 2.83-2.83" />
+            <path d="M18 12h4" />
+            <path d="m16.24 16.24 2.83 2.83" />
+            <path d="M12 18v4" />
+            <path d="m4.93 19.07 2.83-2.83" />
+            <path d="M2 12h4" />
+            <path d="m4.93 4.93 2.83 2.83" />
+          </svg>ETF — Employee contribution</span>
+        <span class="stat-value">None (0%)</span>
+      </div>
+
+      <div class="note-box">
+        <svg class="icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <span>EPF is mandatory from day one of private-sector employment (Employees' Provident Fund Act No. 15 of 1958).
+          The 8%/12% split is the statutory <em>minimum</em> — Section 11 of the Act lets employees and employers elect
+          to contribute at higher percentages, and some companies run their own Approved Private Provident Fund (APF)
+          with different rates instead of standard EPF. ETF is an employer-only contribution (Employees' Trust Fund Act
+          No. 46 of 1980) — nothing is deducted from the employee's pay for it.</span>
+      </div>
+    </div>
+
+    <!-- Government sector -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24">
+            <line x1="3" x2="21" y1="22" y2="22" />
+            <line x1="6" x2="6" y1="18" y2="11" />
+            <line x1="10" x2="10" y1="18" y2="11" />
+            <line x1="14" x2="14" y1="18" y2="11" />
+            <line x1="18" x2="18" y1="18" y2="11" />
+            <polygon points="12 2 20 7 4 7" />
+          </svg></span>
+        Government Sector — Pension Instead of EPF/ETF
+      </div>
+      <p class="card-desc">Permanent, pensionable public officers are <b>not</b> covered by the EPF/ETF Acts. Their
+        retirement security comes from a separate government pension framework instead.</p>
+
+      <div class="section-divider">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M12 2v20" />
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+        Public Servants' Pension Scheme (PSPS)
+      </div>
+      <ul class="plain-list">
+        <li><b>Non-contributory</b> defined-benefit pension, funded entirely from the government budget (no monthly
+          deduction from salary for this part).</li>
+        <li>Eligible after <b>10 years</b> of service in a permanent, pensionable post.</li>
+        <li>Payable from age <b>55 (men)</b> / <b>50 (women)</b>, or at the retirement age set for the service.</li>
+        <li>Monthly pension is a proportion of last drawn salary based on years served — reaching roughly <b>85–90%</b>
+          of final salary after 30 years of service, under the applicable pension formula.</li>
+      </ul>
+
+      <div class="section-divider">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        Widows'/Widowers' &amp; Orphans' Pension (W&amp;OP)
+      </div>
+      <ul class="plain-list">
+        <li><b>Contributory</b> survivor-benefit scheme — a portion is deducted from the officer's monthly salary
+          throughout service, under the Widows' &amp; Orphans' Pension Fund Ordinance (and the Widowers' &amp; Orphans'
+          Pension Act for female officers).</li>
+        <li>Provides a monthly pension to the surviving spouse and eligible children (under 26, unemployed, unmarried)
+          after the officer's death.</li>
+        <li>The exact deduction rate depends on salary scale/grade and is set out in the officer's pension circular — it
+          is administered separately from PAYE/APIT and EPF/ETF, so no single flat percentage applies to every grade.
+        </li>
+      </ul>
+
+      <div class="section-divider">
+        <svg class="icon" viewBox="0 0 24 24">
+          <rect width="20" height="14" x="2" y="5" rx="2" />
+          <line x1="2" x2="22" y1="10" y2="10" />
+        </svg>
+        Gratuity
+      </div>
+      <ul class="plain-list">
+        <li>A lump-sum payment made at retirement, calculated against years of service and final salary rules — separate
+          from the monthly pension.</li>
+      </ul>
+
+      <div class="note-box">
+        <svg class="icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <span>APIT income tax (above) still applies to government salaries exactly as it does to private sector salaries
+          — only EPF/ETF are private-sector-specific.</span>
+      </div>
+    </div>
+
+    <div class="source-box">
+      <svg class="icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+        <path d="M12 17h.01" />
+      </svg>
+      <span>Sources: Inland Revenue Department of Sri Lanka — APIT Tax Table 01 (Y/A 2025/2026) &amp; Inland Revenue
+        (Amendment) Act No. 2 of 2025; Employees' Provident Fund Act No. 15 of 1958 (incl. Section 11 on elective higher
+        contribution rates); Employees' Trust Fund Act No. 46 of 1980; Widows'/Widowers' &amp; Orphans' Pension Fund
+        Ordinance; Department of Pensions Sri Lanka. Always confirm your own case with the IRD, your employer's payroll
+        office, or a qualified accountant — rates can be revised by future gazettes.</span>
+    </div>
+
+    <p class="footer-note">Reference page for the Sri Lanka Salary Calculator. Rates shown are for Year of Assessment
+      2025/2026 (1 April 2025 – 31 March 2026).</p>
   </div>
 
-  <!-- APIT / PAYE -->
-  <div class="card">
-    <div class="card-title">
-      <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/></svg></span>
-      Income Tax — APIT (PAYE), Table 01
-    </div>
-    <p class="card-desc">Applies to regular monthly employment income for resident employees (private &amp; government). Withheld monthly by the employer and remitted to the IRD.</p>
-
-    <div class="pill-row">
-      <span class="pill">Effective from 1 Apr 2025</span>
-      <span class="pill green">Relief: Rs. 1,800,000/yr</span>
-      <span class="pill green">Rs. 150,000/month</span>
-    </div>
-
-    <div class="growth-table-wrap">
-      <table class="rate-table">
-        <thead><tr><th>Monthly taxable slab (after relief)</th><th>Annual equivalent</th><th>Rate</th></tr></thead>
-        <tbody>
-          <tr><td>First Rs. 83,333.33</td><td>First Rs. 1,000,000</td><td>6%</td></tr>
-          <tr><td>Next Rs. 41,666.67</td><td>Next Rs. 500,000</td><td>18%</td></tr>
-          <tr><td>Next Rs. 41,666.67</td><td>Next Rs. 500,000</td><td>24%</td></tr>
-          <tr><td>Next Rs. 41,666.67</td><td>Next Rs. 500,000</td><td>30%</td></tr>
-          <tr class="highlight"><td>Balance</td><td>Balance above Rs. 2,500,000</td><td>36%</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="note-box">
-      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-      <span>Personal relief was raised from Rs. 1,200,000 to Rs. 1,800,000/year and the old 12% band was removed, under the Inland Revenue (Amendment) Act No. 2 of 2025, effective 1 April 2025. This table applies to both government and private sector employees — APIT does not distinguish by sector.</span>
-    </div>
-  </div>
-
-  <!-- EPF / ETF -->
-  <div class="card">
-    <div class="card-title">
-      <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-1.5h3V20h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2Z"/></svg></span>
-      EPF &amp; ETF — Private Sector Only
-    </div>
-    <p class="card-desc">Statutory retirement contributions. Calculated on total monthly earnings (basic + allowances that are part of regular pay, per employer's contract terms).</p>
-
-    <div class="stat-row">
-      <span class="stat-label"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>EPF — Employee contribution</span>
-      <span class="stat-value">8%</span>
-    </div>
-    <div class="stat-row">
-      <span class="stat-label"><svg class="icon" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/></svg>EPF — Employer contribution</span>
-      <span class="stat-value">12%</span>
-    </div>
-    <div class="stat-row">
-      <span class="stat-label"><svg class="icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>EPF — Total contribution</span>
-      <span class="stat-value">20%</span>
-    </div>
-    <div class="stat-row">
-      <span class="stat-label"><svg class="icon" viewBox="0 0 24 24"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>ETF — Employer contribution</span>
-      <span class="stat-value">3%</span>
-    </div>
-    <div class="stat-row">
-      <span class="stat-label"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="m16.24 7.76 2.83-2.83"/><path d="M18 12h4"/><path d="m16.24 16.24 2.83 2.83"/><path d="M12 18v4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M2 12h4"/><path d="m4.93 4.93 2.83 2.83"/></svg>ETF — Employee contribution</span>
-      <span class="stat-value">None (0%)</span>
-    </div>
-
-    <div class="note-box">
-      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-      <span>EPF is mandatory from day one of private-sector employment (Employees' Provident Fund Act No. 15 of 1958). The 8%/12% split is the statutory <em>minimum</em> — Section 11 of the Act lets employees and employers elect to contribute at higher percentages, and some companies run their own Approved Private Provident Fund (APF) with different rates instead of standard EPF. ETF is an employer-only contribution (Employees' Trust Fund Act No. 46 of 1980) — nothing is deducted from the employee's pay for it.</span>
-    </div>
-  </div>
-
-  <!-- Government sector -->
-  <div class="card">
-    <div class="card-title">
-      <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
-      Government Sector — Pension Instead of EPF/ETF
-    </div>
-    <p class="card-desc">Permanent, pensionable public officers are <b>not</b> covered by the EPF/ETF Acts. Their retirement security comes from a separate government pension framework instead.</p>
-
-    <div class="section-divider">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      Public Servants' Pension Scheme (PSPS)
-    </div>
-    <ul class="plain-list">
-      <li><b>Non-contributory</b> defined-benefit pension, funded entirely from the government budget (no monthly deduction from salary for this part).</li>
-      <li>Eligible after <b>10 years</b> of service in a permanent, pensionable post.</li>
-      <li>Payable from age <b>55 (men)</b> / <b>50 (women)</b>, or at the retirement age set for the service.</li>
-      <li>Monthly pension is a proportion of last drawn salary based on years served — reaching roughly <b>85–90%</b> of final salary after 30 years of service, under the applicable pension formula.</li>
-    </ul>
-
-    <div class="section-divider">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      Widows'/Widowers' &amp; Orphans' Pension (W&amp;OP)
-    </div>
-    <ul class="plain-list">
-      <li><b>Contributory</b> survivor-benefit scheme — a portion is deducted from the officer's monthly salary throughout service, under the Widows' &amp; Orphans' Pension Fund Ordinance (and the Widowers' &amp; Orphans' Pension Act for female officers).</li>
-      <li>Provides a monthly pension to the surviving spouse and eligible children (under 26, unemployed, unmarried) after the officer's death.</li>
-      <li>The exact deduction rate depends on salary scale/grade and is set out in the officer's pension circular — it is administered separately from PAYE/APIT and EPF/ETF, so no single flat percentage applies to every grade.</li>
-    </ul>
-
-    <div class="section-divider">
-      <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-      Gratuity
-    </div>
-    <ul class="plain-list">
-      <li>A lump-sum payment made at retirement, calculated against years of service and final salary rules — separate from the monthly pension.</li>
-    </ul>
-
-    <div class="note-box">
-      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-      <span>APIT income tax (above) still applies to government salaries exactly as it does to private sector salaries — only EPF/ETF are private-sector-specific.</span>
-    </div>
-  </div>
-
-  <div class="source-box">
-    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-    <span>Sources: Inland Revenue Department of Sri Lanka — APIT Tax Table 01 (Y/A 2025/2026) &amp; Inland Revenue (Amendment) Act No. 2 of 2025; Employees' Provident Fund Act No. 15 of 1958 (incl. Section 11 on elective higher contribution rates); Employees' Trust Fund Act No. 46 of 1980; Widows'/Widowers' &amp; Orphans' Pension Fund Ordinance; Department of Pensions Sri Lanka. Always confirm your own case with the IRD, your employer's payroll office, or a qualified accountant — rates can be revised by future gazettes.</span>
-  </div>
-
-  <p class="footer-note">Reference page for the Sri Lanka Salary Calculator. Rates shown are for Year of Assessment 2025/2026 (1 April 2025 – 31 March 2026).</p>
-</div>
-
-<script src="./theme.js" defer></script>
+  <script src="./theme.js" defer></script>
 </body>
+
 </html>
