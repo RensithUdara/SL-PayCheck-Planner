@@ -271,6 +271,7 @@
     font-size: clamp(10.5px, 2.7vw, 11.5px); color: #14428f; margin-top: 8px; margin-bottom: 0;
   }
 </style>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('sl_salary_cal_theme') || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark'));</script>
 <link rel="stylesheet" href="./futuristic-ui.css">
 </head>
 <body>
@@ -726,5 +727,6 @@ function calcLoan() {
 
 applyLoanDefault();
 </script>
+<script src="./theme.js" defer></script>
 </body>
 </html>
